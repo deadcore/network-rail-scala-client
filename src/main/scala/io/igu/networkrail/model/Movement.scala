@@ -1,0 +1,33 @@
+package io.igu.networkrail.model
+
+import java.time.LocalDateTime
+
+case class Movement(event_type: String,
+                    gbtt_timestamp: LocalDateTime,
+                    original_loc_stanox: String,
+                    planned_timestamp: String,
+                    timetable_variation: String,
+                    original_loc_timestamp: String,
+                    current_train_id: String,
+                    delay_monitoring_point: String,
+                    next_report_run_time: String,
+                    reporting_stanox: String,
+                    actual_timestamp: String,
+                    correction_ind: String,
+                    event_source: String,
+                    train_file_address: String,
+                    platform: String,
+                    division_code: String,
+                    train_terminated: String,
+                    train_id: String,
+                    offroute_ind: String,
+                    variation_status: String,
+                    train_service_code: String,
+                    toc_id: String,
+                    loc_stanox: String,
+                    auto_expected: String,
+                    direction_ind: String,
+                    route: String,
+                    planned_event_type: String,
+                    next_report_stanox: String,
+                    line_ind: String)
