@@ -12,6 +12,10 @@ object Fixtures {
     object Schedule {
       def updateDaily: BufferedSource = load("/fixtures/schedule/cif_all_update_daily-toc-update-wed.cif.gz")
     }
+
+    object Messages {
+      def trainDescriber: String = load("/fixtures/messages/train-describer.json").mkString
+    }
   }
 
 }

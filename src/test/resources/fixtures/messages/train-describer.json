@@ -1,0 +1,297 @@
+[
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "SM",
+      "address": "01",
+      "msg_type": "SF",
+      "data": "80"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "ZP01",
+      "time": "1509716656000",
+      "area_id": "XZ",
+      "msg_type": "CA",
+      "from": "STIN",
+      "descr": "1F97"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "ED",
+      "address": "3E",
+      "msg_type": "SF",
+      "data": "77"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "R1",
+      "address": "84",
+      "msg_type": "SF",
+      "data": "AE"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "ZG",
+      "address": "5A",
+      "msg_type": "SF",
+      "data": "98"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "MP",
+      "address": "51",
+      "msg_type": "SF",
+      "data": "10"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "T1",
+      "address": "11",
+      "msg_type": "SF",
+      "data": "00"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0242",
+      "time": "1509716656000",
+      "area_id": "CL",
+      "msg_type": "CA",
+      "from": "0244",
+      "descr": "1M97"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "A2",
+      "address": "0D",
+      "msg_type": "SF",
+      "data": "10"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "R2",
+      "address": "A4",
+      "msg_type": "SF",
+      "data": "7F"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "LC",
+      "address": "18",
+      "msg_type": "SF",
+      "data": "5F"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0803",
+      "time": "1509716656000",
+      "area_id": "M3",
+      "msg_type": "CA",
+      "from": "0610",
+      "descr": "1E72"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "LC",
+      "address": "14",
+      "msg_type": "SF",
+      "data": "FF"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0272",
+      "time": "1509716656000",
+      "area_id": "LB",
+      "msg_type": "CA",
+      "from": "0278",
+      "descr": "2D40"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "D3",
+      "address": "7E",
+      "msg_type": "SF",
+      "data": "04"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0012",
+      "time": "1509716656000",
+      "area_id": "X2",
+      "msg_type": "CA",
+      "from": "0018",
+      "descr": "2A38"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "LS",
+      "address": "02",
+      "msg_type": "SF",
+      "data": "A8"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0716",
+      "time": "1509716656000",
+      "area_id": "HU",
+      "msg_type": "CA",
+      "from": "0720",
+      "descr": "1P37"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "CA",
+      "address": "8B",
+      "msg_type": "SF",
+      "data": "40"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "CC",
+      "address": "08",
+      "msg_type": "SF",
+      "data": "01"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0953",
+      "time": "1509716656000",
+      "area_id": "YK",
+      "msg_type": "CA",
+      "from": "0947",
+      "descr": "1S16"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "2959",
+      "time": "1509716656000",
+      "area_id": "C2",
+      "msg_type": "CA",
+      "from": "2957",
+      "descr": "2E32"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "R1",
+      "address": "47",
+      "msg_type": "SF",
+      "data": "F3"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "D6",
+      "address": "22",
+      "msg_type": "SF",
+      "data": "3F"
+    }
+  },
+  {
+    "CT_MSG": {
+      "time": "1509716656000",
+      "area_id": "OX",
+      "msg_type": "CT",
+      "report_time": "1332"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "ES",
+      "address": "1C",
+      "msg_type": "SF",
+      "data": "C6"
+    }
+  },
+  {
+    "CC_MSG": {
+      "to": "X012",
+      "time": "1509716656000",
+      "area_id": "X2",
+      "msg_type": "CC",
+      "descr": "2A38"
+    }
+  },
+  {
+    "CT_MSG": {
+      "time": "1509716656000",
+      "area_id": "LA",
+      "msg_type": "CT",
+      "report_time": "1355"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "YO",
+      "address": "13",
+      "msg_type": "SF",
+      "data": "CB"
+    }
+  },
+  {
+    "CA_MSG": {
+      "to": "0117",
+      "time": "1509716656000",
+      "area_id": "AD",
+      "msg_type": "CA",
+      "from": "0111",
+      "descr": "2R38"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "X0",
+      "address": "4B",
+      "msg_type": "SF",
+      "data": "2C"
+    }
+  },
+  {
+    "SF_MSG": {
+      "time": "1509716656000",
+      "area_id": "D3",
+      "address": "21",
+      "msg_type": "SF",
+      "data": "00"
+    }
+  }
+]
