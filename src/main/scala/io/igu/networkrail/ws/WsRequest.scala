@@ -16,8 +16,6 @@ trait WsRequest {
 
   def params(tuple: (String, String)*): WsRequest
 
-  def execute[T](parser: InputStream => T): Observable[WsResponse[T]]
-
   def execute: Observable[WsResponse[InputStream]]
 
 }

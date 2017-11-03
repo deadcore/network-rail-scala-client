@@ -7,5 +7,5 @@ trait HttpWsClientProvider extends WsClientProvider {
   val username: String
   val password: String
 
-  override def wsClient: WsClient = (source: String) => HttpWsRequest(Http(source), username, password)
+  override def wsClient: WsClient = (source: String) => ApacheClientRequest(Http(source), username, password)
 }

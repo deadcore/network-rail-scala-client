@@ -17,10 +17,6 @@ trait ScheduleDirective extends CifFileAuthenticateDirective {
 
   private val logger = LoggerFactory.getLogger(this.getClass)
 
-  //  def schedule: Observable[ScheduleRecord] = cifDownload("CIF_ALL_FULL_DAILY", "toc-full.CIF.gz")
-  //
-  //  def schedule(dayOfWeek: DayOfWeek): Observable[ScheduleRecord]
-
   def schedule: Observable[ScheduleRecord] = cifDownload("CIF_ALL_FULL_DAILY", "toc-full.CIF.gz")
 
   def schedule(dayOfWeek: DayOfWeek): Observable[ScheduleRecord] = cifDownload("CIF_ALL_UPDATE_DAILY", s"toc-update-${dayOfWeek.asCifFormat}.CIF.gz")
@@ -29,16 +25,11 @@ trait ScheduleDirective extends CifFileAuthenticateDirective {
     logger.info(s"Downloading cif file with filetype: [$fileType] and day: [$day]")
 
     cifFileAuthenticate(fileType, day)
-      .flatMap { file =>
-
-        val subject = PublishSubject.create[ScheduleRecord]
-        wsClient.url(file).execute(is => {
-          new CifReader(new GZIPInputStream(is)).stream.foreach((x: ScheduleRecord) => subject.onNext(x))
-        }).flatMap(_ => subject)
-      }
+      .flatMap(file => wsClient.url(file).execute)
+      .map(is => from(is, 70))
   }
 
-  private def from(is: InputStream, bufferSize: Int) = Flowable.generate((emitter: Emitter[Array[Byte]]) => {
+  private def from(is: InputStream, bufferSize: Int) = Observable.generate((emitter: Emitter[Array[Byte]]) => {
     val buffer = new Array[Byte](bufferSize)
     val count = is.read(buffer)
     if (count == -1) emitter.onComplete()
