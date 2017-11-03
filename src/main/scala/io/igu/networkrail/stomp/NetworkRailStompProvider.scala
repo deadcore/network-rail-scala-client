@@ -16,17 +16,15 @@ trait NetworkRailStompProvider extends NetworkRailProvider {
   val username: String
   val password: String
 
-  val client: Observable[Client] = Observable.create { subscriber =>
-    val client = new Client(stompServer, stompPort, username, password)
-
-    if (client.isConnected) subscriber.onNext(client)
-  }
+  val client: Observable[Client] = Observable.defer(() => {
+    Observable.just(new Client(stompServer, stompPort, username, password))
+  })
 
   def provide: Observable[NetworkRail] = client.map(client => new NetworkRail {
     override def subscribe(topic: String): Observable[String] = Observable.create { observer =>
       client.subscribe(s"/topic/$topic", Listener { (body: String) =>
         logger.trace("Received body: {}", body)
-
+        println(body)
         observer.onNext(body)
       })
     }

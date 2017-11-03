@@ -8,7 +8,7 @@ import org.json4s.JValue
 trait WsRequest {
   def executeAsJValue: Observable[WsResponse[JValue]]
 
-  def executeNoHup: Observable[WsResponse[Nothing]]
+  def executeNoHup: Observable[WsResponse[Unit]]
 
   def authenticated: WsRequest
 

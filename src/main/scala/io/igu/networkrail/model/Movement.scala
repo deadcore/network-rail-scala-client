@@ -1,9 +1,7 @@
 package io.igu.networkrail.model
 
-import java.time.LocalDateTime
-
 case class Movement(event_type: String,
-                    gbtt_timestamp: LocalDateTime,
+                    gbtt_timestamp: String,
                     original_loc_stanox: String,
                     planned_timestamp: String,
                     timetable_variation: String,
