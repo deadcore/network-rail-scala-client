@@ -24,7 +24,6 @@ trait NetworkRailStompProvider extends NetworkRailProvider {
     override def subscribe(topic: String): Observable[String] = Observable.create { observer =>
       client.subscribe(s"/topic/$topic", Listener { (body: String) =>
         logger.trace("Received body: {}", body)
-        println(body)
         observer.onNext(body)
       })
     }

@@ -4,12 +4,15 @@ import java.io.InputStream
 import java.util.zip.GZIPInputStream
 
 import io.reactivex.Observable
+import org.apache.http.HttpRequest
+import org.apache.http.client.HttpClient
+import org.apache.http.impl.client.{DefaultHttpClient, HttpClientBuilder}
+import org.apache.http.params.HttpConnectionParams
 import org.json4s.JsonAST.JValue
 import org.json4s.native.JsonMethods.parse
 
-import scalaj.http.HttpRequest
-
 case class HttpWsRequest(http: HttpRequest, username: String, password: String) extends WsRequest {
+
   override def executeAsJValue: Observable[WsResponse[JValue]] = Observable.defer(() => {
     Observable.just(
       HttpWsResponse(http.execute(readGzipAsJson))
@@ -33,5 +36,12 @@ case class HttpWsRequest(http: HttpRequest, username: String, password: String) 
 
   override def params(tuple: (String, String)*) = copy(http = http.params(tuple))
 
-  override def execute[T](parser: InputStream => T) = ???
+  override def execute[T](parser: InputStream => T): Observable[WsResponse[T]] = Observable.defer(() => {
+    Observable.just(
+      HttpWsResponse(http.execute(parser))
+    )
+  })
+
+
+  override def execute: Observable[WsResponse[InputStream]] = http.execute()
 }
