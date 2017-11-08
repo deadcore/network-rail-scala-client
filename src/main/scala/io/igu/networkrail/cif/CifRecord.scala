@@ -62,7 +62,7 @@ class CifRecord(record: String) {
       transactionType = TransactionType.parse(record.char),
       trainUID = record.string(6),
       dateRunsFrom = LocalDate.parse(record.string(6), yearMonthDayFormat),
-      dateRunsTo = record.optString(6).map(LocalDate.parse(_, yearMonthDayFormat)),
+      dateRunsTo = record.optString(6).filter(x => x == "00000000").map(LocalDate.parse(_, yearMonthDayFormat)),
       daysRunBit = asDayOfWeeks(record.string(7)),
       bankHolidayRunning = record.optChar,
       trainStatus = record.optChar.map(Status.parse),

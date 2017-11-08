@@ -1,7 +1,7 @@
 package io.igu.networkrail.example
 
 import io.igu.networkrail.SmartDirective
-import io.igu.networkrail.ws.HttpWsClientProvider
+import io.igu.networkrail.ws.scalaj.HttpWsClientProvider
 
 object SmartDirectiveExample extends App {
 

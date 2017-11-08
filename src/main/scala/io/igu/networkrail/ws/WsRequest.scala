@@ -12,10 +12,8 @@ trait WsRequest {
 
   def authenticated: WsRequest
 
-  def auth(username: String, password: String): WsRequest
-
   def params(tuple: (String, String)*): WsRequest
 
-  def execute: Observable[WsResponse[InputStream]]
+  def execute[T](parser: InputStream => T): WsResponse[T]
 
 }

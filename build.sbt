@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
   "io.reactivex.rxjava2" % "rxjava" % "2.1.6",
   "org.apache.activemq" % "activemq-client" % "5.15.2",
   "org.projectodd.stilts" % "stilts-stomp-client" % "0.1.40" % "test",
+  "org.scalaj" %% "scalaj-http" % "2.3.0",
   "org.mockito" % "mockito-all" % "1.10.19" % Test,
   "org.scalatest" % "scalatest_2.12" % "3.0.1" % Test
 ).map(_
