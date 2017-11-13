@@ -26,17 +26,11 @@ import org.scalatest.{BeforeAndAfter, MustMatchers, OptionValues, WordSpec}
 
 class TrainDescriberDirectiveTest extends WordSpec with MustMatchers with OptionValues with MockitoSugar with BeforeAndAfter {
 
-
-  private val message$: ReplaySubject[String] = ReplaySubject.create[String]()
-  private val networkRailClient: NetworkRail = mock[NetworkRail]
-
-  private val directive: TrainDescriberDirective = new TrainDescriberDirective with TestNetworkRailProvider {
-    val networkRail: NetworkRail = networkRailClient
+  private val directive = new TrainDescriberDirective with TestNetworkRailProvider {
   }
 
   before {
-    reset(networkRailClient)
-    when(networkRailClient.subscribe(anyString())).thenReturn(message$)
+    directive.reset()
   }
 
   "TrainDescriberDirective" should {
@@ -47,8 +41,7 @@ class TrainDescriberDirectiveTest extends WordSpec with MustMatchers with Option
         val validator = mock[(TrainDescriber => Any)]
 
         directive.trainDescriber(fixture).subscribe(x => validator(x))
-
-        message$.onNext(Fixtures.NetworkRail.Messages.trainDescriber)
+        directive.message$.onNext(Fixtures.NetworkRail.Messages.trainDescriber)
 
         verify(validator, times(1)).apply(any[TrainDescriber])
       }

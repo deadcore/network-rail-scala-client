@@ -16,11 +16,20 @@
 
 package io.igu.networkrail
 import io.reactivex.Observable
+import io.reactivex.subjects.ReplaySubject
+import org.mockito.Matchers.anyString
+import org.mockito.Mockito.when
+import org.scalatest.mockito.MockitoSugar
 
-trait TestNetworkRailProvider extends NetworkRailProvider {
+trait TestNetworkRailProvider extends NetworkRailProvider with MockitoSugar {
 
-  val networkRail: NetworkRail
+  val networkRail: NetworkRail = mock[NetworkRail]
+  val message$: ReplaySubject[String] = ReplaySubject.create[String]()
 
-  override def provide: Observable[NetworkRail] = Observable.just(networkRail)
+  def provide: Observable[NetworkRail] = Observable.just(networkRail)
+
+  def reset(): Unit = {
+    when(networkRail.subscribe(anyString())).thenReturn(message$)
+  }
 
 }
